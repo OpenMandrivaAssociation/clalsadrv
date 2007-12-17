@@ -14,7 +14,6 @@ Source:		http://users.skynet.be/solaris/linuxaudio/downloads/%{name}-%{version}.
 URL:		http://users.skynet.be/solaris/linuxaudio/
 License:	GPL
 Group:		System/Libraries
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:  alsa-lib-devel
 
 %description
