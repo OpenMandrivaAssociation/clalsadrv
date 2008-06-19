@@ -1,6 +1,6 @@
 %define name	clalsadrv
-%define version	1.0.1
-%define release %mkrel 3
+%define version	1.2.2
+%define release %mkrel 1
 
 %define major	1
 %define libname %mklibname %name %major
@@ -10,9 +10,9 @@ Summary: 	C++ access library for ALSA
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://users.skynet.be/solaris/linuxaudio/downloads/%{name}-%{version}.tar.bz2
+Source:		http://users.skynet.be/solaris/linuxaudio/downloads/%{name}-%{version}.tar.gz
 URL:		http://users.skynet.be/solaris/linuxaudio/
-License:	GPL
+License:	GPLv2
 Group:		System/Libraries
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:  alsa-lib-devel
@@ -41,7 +41,7 @@ Obsoletes: 	%name-devel
 Libraries and includes files for developing programs based on %name.
 
 %prep
-%setup -q
+%setup -q -n %name
 perl -pi -e 's/\-O2/\$\(RPM_OPT_FLAGS\)/' Makefile
 
 %build
@@ -51,7 +51,7 @@ perl -pi -e 's/\-O2/\$\(RPM_OPT_FLAGS\)/' Makefile
 rm -rf $RPM_BUILD_ROOT
 mkdir -p %buildroot/%_libdir
 mkdir -p %buildroot/%_includedir
-make install CLALSADRV_LIBDIR=%buildroot/%_libdir CLALSADRV_INCDIR=%buildroot/%_includedir
+make install PREFIX=%buildroot/%_prefix
 
 %clean
 rm -rf $RPM_BUILD_ROOT
