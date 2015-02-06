@@ -7,7 +7,7 @@
 Name:		%{name}
 Summary:	C++ access library for ALSA
 Version:	2.0.0
-Release:	2
+Release:	3
 Source:		http://www.kokkinizita.net/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 URL:		http://www.kokkinizita.net/linuxaudio/
 License:	GPLv2
