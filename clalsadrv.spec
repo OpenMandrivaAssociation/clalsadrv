@@ -12,6 +12,7 @@ Source:		http://www.kokkinizita.net/linuxaudio/downloads/%{name}-%{version}.tar.
 URL:		https://www.kokkinizita.net/linuxaudio/
 License:	GPLv2
 Group:		System/Libraries
+BuildRequires:	make
 BuildRequires:	pkgconfig(alsa)
 
 %description
